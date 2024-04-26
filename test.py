@@ -78,15 +78,6 @@ preguntas = [
     }
     },
     {
-        "texto": "¿Cómo podrías enseñar a una computadora a reconocer la diferencia entre un perro y un gato?",
-        "opciones": {
-            "a": {"texto": "Mostrarías muchas imágenes de ambos y le dirías cuál es cuál", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 4, "analisis": 2}},
-            "b": {"texto": "No lo haría", "puntajes": {"estadistica": 1, "aprendizaje_automatico": 1, "analisis": 1}},
-            "c": {"texto": "No tengo idea", "puntajes": {"estadistica": 1, "aprendizaje_automatico": 1, "analisis": 1}},
-            "d": {"texto": "No estoy seguro", "puntajes": {"estadistica": 1, "aprendizaje_automatico": 1, "analisis": 1}}
-    }
-    },
-    {
         "texto": "Imagina que tienes un rompecabezas muy difícil. ¿Qué haces?",
         "opciones": {
             "a": {"texto": "Sigues intentándolo hasta que lo resuelves, sin importar cuánto tiempo te lleve", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 2, "analisis": 4}},
@@ -142,10 +133,10 @@ def obtener_respuestas() -> Dict[str, int]:
 # Función para determinar la disciplina más adecuada
 def determinar_disciplina(respuestas: Dict[str, int]) -> str:
     disciplina_maxima = max(respuestas, key=respuestas.get)
-    if respuestas[disciplina_maxima] > 10:
+    if respuestas[disciplina_maxima] >= 28:
         return disciplina_maxima.replace("_", " ").capitalize()
     else:
-        return "Busca otra carrera"
+        return "Busca otra carrera, la ciencia de datos no es lo tuyo"
 
 # Función para mostrar los resultados en una gráfica de barras
 def mostrar_grafica(respuestas: Dict[str, int]):
