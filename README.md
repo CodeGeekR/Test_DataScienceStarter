@@ -1,4 +1,6 @@
-# Test_DataScienceStarter
+# Test Data Science Starter
+
+[![Python](https://img.shields.io/badge/Python-blue?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)](https://www.python.org)
 
 ## Descripción
 
@@ -9,7 +11,7 @@ Test Data Science Starter, es tu guía interactiva para descubrir tu camino en l
 Para instalar este script, primero debes clonar el repositorio:
 
 ```bash
-git clone https://github.com/yourusername/NombreDelScript.git
+git clone https://github.com/CodeGeekR/Test_DataScienceStarter.git
 ```
 
 Luego, navega hasta el directorio del proyecto y ejecuta el siguiente comando para instalar las dependencias necesarias:
