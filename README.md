@@ -30,7 +30,7 @@ python test.py
 
 ## URL del Proyecto
 
-Puedes acceder al proyecto en la siguiente URL: [Test Data Science Starter](https://testdatascience.azurewebsites.net/){:target="\_blank"}
+Puedes acceder al proyecto en la siguiente URL: <a href="https://testdatascience.azurewebsites.net/" target="_blank">Test Data Science Starter</a>
 
 ## Contribuir
 
