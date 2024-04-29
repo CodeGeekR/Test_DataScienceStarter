@@ -11,41 +11,91 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <style>
+      /* Estilos personalizados para lograr el estilo de TypeForm */
+      body {
+        background-color: #f2e9d2;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-group, .intro {
+        display: none;
+      }
+      .form-group.active, .intro.active {
+        display: block;
+      }
+      .intro {
+        text-align: center;
+        color: #114B60;
+      }
+      .intro button {
+        background-color: #114B60;
+        border: none;
+        border-radius: 10px;
+        color: #88D498;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      #submit-button {
+        background-color: #114B60;
+        border: none;
+        border-radius: 10px;
+        color: #88D498;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .form-select {
+        background-color: #C6DAC0;
+        color: black;
+        border: 2px solid #1A946F;
+    </style>
   </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Test de Afinidad para Ciencia de Datos</h1>
+    <div class="container">
         <!-- Inicio del formulario, los resultados se enviarán a la ruta "/resultados" -->
-        <form action="/resultados" method="post">
+        <form id="quiz-form" action="/resultados" method="post">
+            <!-- Introducción -->
+            <div class="intro active" id="intro">
+              <h1>Test de Afinidad para Ciencia de Datos</h1>
+              <p>Este test te ayudará a descubrir tu afinidad para alguna de las disciplinas con la ciencia de datos.</p>
+              <button type="button" onclick="startTest()">Iniciar Test</button>
+          </div>
             <!-- Iteramos sobre cada pregunta en la lista de preguntas -->
             {% for pregunta in preguntas %}
-            <div class="mb-3">
+            <div class="form-group mb-3" id="pregunta{{ loop.index }}">
                 <!-- Mostramos el texto de la pregunta -->
                 <label class="form-label">{{ pregunta.texto }}</label>
-                <!-- Creamos un contenedor para el menú desplegable -->
-                <div style="width: fit-content;">
-                    <!-- Creamos un menú desplegable para las opciones de la pregunta actual -->
-                    <select class="form-select" name="pregunta{{ loop.index }}">
-                        <!-- Iteramos sobre cada opción en la pregunta actual -->
-                        {% for opcion, detalles in pregunta.opciones.items() %}
-                        <!-- Creamos una opción en el menú desplegable para la opción actual.
-                                 El valor de la opción es el identificador de la opción. -->
-                        <option value="{{ opcion }}">{{ opcion }}. {{ detalles.texto }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+                <!-- Creamos un menú desplegable para las opciones de la pregunta actual -->
+                <select class="form-select" name="pregunta{{ loop.index }}" onchange="nextQuestion({{ loop.index }})">
+                    <!-- Agregamos una opción vacía al principio que no esté seleccionada por defecto -->
+                    <option value="" selected disabled hidden>Selecciona una opción</option>
+                    <!-- Iteramos sobre cada opción en la pregunta actual -->
+                    {% for opcion, detalles in pregunta.opciones.items() %}
+                    <!-- Creamos una opción en el menú desplegable para la opción actual.
+                             El valor de la opción es el identificador de la opción. -->
+                    <option value="{{ opcion }}">{{ opcion }}. {{ detalles.texto }}</option>
+                    {% endfor %}
+                </select>
             </div>
             {% endfor %}
             <!-- Botón para enviar el formulario -->
-            <button type="submit" class="btn btn-primary mt-3 mb-4">Enviar respuestas</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-4" id="submit-button" style="display: none;">Enviar respuestas</button>
         </form>
     </div>
-</body>
 
     <!-- Bootstrap JS y dependencias opcionales -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -59,5 +109,28 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Función para mostrar la siguiente pregunta
+      function nextQuestion(index) {
+        document.getElementById('pregunta' + index).classList.remove('active');
+        var nextQuestion = document.getElementById('pregunta' + (index + 1));
+        if (nextQuestion) {
+          nextQuestion.classList.add('active');
+        } else {
+          document.getElementById('submit-button').style.display = 'block';
+        }
+      }
+
+      // Función para iniciar el test
+      function startTest() {
+        document.getElementById('intro').classList.remove('active');
+        document.getElementById('pregunta1').classList.add('active');
+      }
+
+      // Mostrar la introducción al cargar la página
+      window.onload = function() {
+        document.getElementById('intro').classList.add('active');
+      }
+    </script>
   </body>
 </html>
