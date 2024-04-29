@@ -5,9 +5,27 @@ import matplotlib.pyplot as plt
 import io
 import base64
 from typing import Dict, List
+from models import db, Resultado
+import uuid
+from collections import Counter
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import inspect
 
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+    db.init_app(app)
+    migrate = Migrate(app, db)
 
-app = Flask(__name__)
+    with app.app_context():
+        inspector = inspect(db.engine)
+        if 'resultado' not in inspector.get_table_names():
+            db.create_all()
+
+    return app
+
+app = create_app()
 
 # Preguntas y puntajes para cada disciplina
 preguntas = [
@@ -173,7 +191,7 @@ def determinar_disciplina(respuestas: Dict[str, int]) -> str:
         if respuestas[disciplina_maxima] >= 40:
             return disciplina_maxima.replace("_", " ").capitalize()
         else:
-            return "Busca otra carrera, la ciencia de datos no es lo tuyo"
+            return "Busca otra disciplina"
     else:
         return "No se proporcionaron suficientes respuestas para determinar una disciplina"
 
@@ -181,13 +199,16 @@ def determinar_disciplina(respuestas: Dict[str, int]) -> str:
 def mostrar_grafica(respuestas: Dict[str, int]) -> str:
     disciplinas = list(respuestas.keys())
     puntajes = list(respuestas.values())
-    plt.bar(disciplinas, puntajes)
+    fig, ax = plt.subplots()
+    ax.bar(disciplinas, puntajes)
+    ax.set_facecolor('#f2e9d2')  # Cambiar el color de fondo
+    fig.patch.set_facecolor('#f2e9d2')  # Cambiar el color de fondo de la figura
     plt.xlabel('Disciplinas')
     plt.ylabel('Puntajes')
     plt.title('Puntajes por disciplina')
     # Guardar la gráfica en un objeto BytesIO
     img = io.BytesIO()
-    plt.savefig(img, format='png')
+    plt.savefig(img, format='png', facecolor=fig.get_facecolor())
     img.seek(0)
     # Codificar la imagen en base64 y decodificarla a una cadena
     img_str = base64.b64encode(img.read()).decode('utf-8')
@@ -202,12 +223,35 @@ def index():
 @app.route('/resultados', methods=['POST'])
 def resultados():
     try:
+        id_dispositivo = str(uuid.uuid4())  # Generar un ID único para el dispositivo
         respuestas = obtener_respuestas(request.form, preguntas)
         disciplina = determinar_disciplina(respuestas)
         grafica = mostrar_grafica(respuestas)
+        # Almacenar el resultado en la base de datos
+        resultado = Resultado(id_dispositivo=id_dispositivo, disciplina=disciplina)
+        db.session.add(resultado)
+        db.session.commit()
         return render_template('resultados.html', disciplina=disciplina, grafica=grafica)
     except Exception as e:
         return str(e)
+    
+@app.route('/estadisticas')
+def estadisticas():
+    resultados = Resultado.query.all()
+    total_personas = len(resultados)  # Contar el número total de personas
+    disciplinas = [resultado.disciplina for resultado in resultados]
+    conteo = Counter(disciplinas)
+    # Crear una gráfica circular
+    fig, ax = plt.subplots()
+    ax.pie(conteo.values(), labels=conteo.keys(), autopct='%1.1f%%')
+    ax.set_facecolor('#f2e9d2')  # Cambiar el color de fondo
+    fig.patch.set_facecolor('#f2e9d2')  # Cambiar el color de fondo de la figura
+    # Convertir la gráfica a una imagen PNG en base64
+    img = io.BytesIO()
+    plt.savefig(img, format='png', facecolor=fig.get_facecolor())
+    img.seek(0)
+    img_str = base64.b64encode(img.read()).decode('utf-8')
+    return render_template('estadisticas.html', img_str=img_str, total_personas=total_personas)
 
 if __name__ == "__main__":
     app.run(debug=True)
