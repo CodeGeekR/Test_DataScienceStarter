@@ -16,34 +16,11 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-        <!-- Estilos adicionales -->
+        <!-- Estilos static css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
         <style>
-          body {
-            background-color: #f2e9d2;
-            }
-            .container {
-                margin-top: 50px;
-            }
-            #grafica {
-                margin-top: 50px;
-            }
-            .startTest {
-              background-color: #114B60;
-              border: none;
-              border-radius: 10px;
-              color: #88D498;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-            p {
-                font-size: 1.2em;
-                text-align: center;
-            }
+
         </style>
     </head>
     <body>
@@ -67,7 +44,7 @@
                 <a href="/" class="startTest btn btn-primary">Realizar el test nuevamente</a>
             </div>
               <!-- Botón para VER LAS Estadisticas -->
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-3 mb-4">
                 <a href="/estadisticas" class="startTest btn btn-primary">Ver Estadisticas</a>
             </div>
         </div>

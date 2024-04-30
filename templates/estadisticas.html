@@ -16,39 +16,16 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-        <!-- Estilos adicionales -->
-        <style>
-          body {
-            background-color: #f2e9d2;
-            }
-            .container {
-                margin-top: 50px;
-            }
-            #grafica {
-                margin-top: 50px;
-            }
-            .startTest {
-              background-color: #114B60;
-              border: none;
-              border-radius: 10px;
-              color: #88D498;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-        </style>
+        <!-- Estilos static css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     </head>
     <body>
-        <div class="container d-flex flex-column align-items-center justify-content-center">
+        <div class="container d-flex flex-column align-items-center justify-content-center text-center">
             <h1>Estadisticas del Test de Afinidad para Ciencia de Datos</h1>
             <p>Número total de personas que completaron el test: {{ total_personas }}</p>
             <div id="grafica">
                 <!-- Aquí se mostrará la imagen de la gráfica -->
-                <img src="data:image/png;base64,{{ img_str }}" alt="Gráfica circular">
+                <img src="data:image/png;base64,{{ img_str }}" alt="Gráfica circular" class="img-fluid">
             </div>
             <!-- Botón para volver a realizar el test -->
             <div class="d-flex justify-content-center mt-3">

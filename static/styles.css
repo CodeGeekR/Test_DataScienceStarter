@@ -1,0 +1,75 @@
+:root {
+    --primary-color: #114B60;
+    --secondary-color: #88D498;
+    --tertiary-color: #C6DAC0;
+    --quaternary-color: #1A946F;
+    --quinary-color: #F2E9D2;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--quinary-color);
+}
+    
+h1, h2, h3, h4 {
+    text-wrap: balance;
+    text-align: center;
+}
+    
+p {
+    text-wrap: wrap;
+    font-size: 1.2em;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#grafica {
+    margin-top: 50px;
+}
+.form-group, .intro {
+    display: none;
+}
+
+.form-group .form-label {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.form-group.active, .intro.active {
+    display: block;
+}
+.intro {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.form-select {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--quaternary-color); 
+}
+
+.startTest {
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    color: var(--secondary-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.startTest:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
