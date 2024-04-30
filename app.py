@@ -11,17 +11,21 @@ from collections import Counter
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+import os
+from dotenv import load_dotenv
+
+# Carga las variables de entorno desde el archivo .env
+load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+    # Usa la variable de entorno DATABASE_URL para la cadena de conexión de la base de datos
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
     db.init_app(app)
     migrate = Migrate(app, db)
 
     with app.app_context():
-        inspector = inspect(db.engine)
-        if 'resultado' not in inspector.get_table_names():
-            db.create_all()
+        db.create_all()
 
     return app
 
