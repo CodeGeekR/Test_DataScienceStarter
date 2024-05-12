@@ -19,4 +19,3 @@ function startTest() {
 window.onload = function () {
     document.getElementById('intro').classList.add('active');
 }
-

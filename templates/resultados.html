@@ -31,14 +31,17 @@
                 <strong>{{ disciplina }}</strong>
             </p>
             <p>
-                El puntaje minimo para clasiﬁcar en una disciplina es:<strong> 40 pts</strong>
-                <br>
-                El puntaje maximo es:<strong> 60 pts</strong>
+                Tu puntaje máximo fue de: <strong>{{ puntaje }} pts</strong>
             </p>
             <div id="grafica">
                 <!-- Aquí se mostrará la imagen de la gráfica -->
                 <img src="data:image/png;base64,{{ grafica }}" class="img-fluid" alt="Gráfica de puntajes por disciplina" />
             </div>
+            <p>
+              El puntaje minimo para clasiﬁcar en una disciplina es:<strong> 40 pts</strong>
+              <br>
+              El puntaje maximo es:<strong> 60 pts</strong>
+          </p>
             <!-- Botón para volver a realizar el test -->
             <div class="d-flex justify-content-center mt-3">
                 <a href="/" class="startTest btn btn-primary">Realizar el test nuevamente</a>

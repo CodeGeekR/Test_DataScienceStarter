@@ -11,7 +11,9 @@ from collections import Counter
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import inspect
+from sqlalchemy.exc import DatabaseError
 import os
+import time
 from dotenv import load_dotenv
 
 # Carga las variables de entorno desde el archivo .env
@@ -204,16 +206,29 @@ def mostrar_grafica(respuestas: Dict[str, int]) -> str:
     disciplinas = list(respuestas.keys())
     puntajes = list(respuestas.values())
     fig, ax = plt.subplots()
-    ax.bar(disciplinas, puntajes)
-    ax.set_facecolor('#f2e9d2')  # Cambiar el color de fondo
-    fig.patch.set_facecolor('#f2e9d2')  # Cambiar el color de fondo de la figura
-    plt.xlabel('Disciplinas')
-    plt.ylabel('Puntajes')
-    plt.title('Puntajes por disciplina')
+
+    # Crear las barras y cambiar su color
+    barras = ax.bar(disciplinas, puntajes, color='#1A946F')
+
+    # Agregar etiquetas a las barras
+    for barra in barras:
+        yval = barra.get_height()
+        ax.text(barra.get_x() + barra.get_width()/2, yval + 5, yval, ha='center', va='bottom')
+
+    ax.set_facecolor('#F2E9D2')  # Cambiar el color de fondo
+    fig.patch.set_facecolor('#F2E9D2')  # Cambiar el color de fondo de la figura
+    plt.xlabel('Disciplinas', color='#1A946F')
+    plt.ylabel('Puntajes', color='#1A946F')
+    plt.title('Puntajes por disciplina', color='#1A946F')
+
+    # Ajustar los límites del eje y para que haya más espacio entre el puntaje más alto y el borde de la imagen
+    plt.ylim(0, max(puntajes) + 10)
+
     # Guardar la gráfica en un objeto BytesIO
     img = io.BytesIO()
     plt.savefig(img, format='png', facecolor=fig.get_facecolor())
     img.seek(0)
+
     # Codificar la imagen en base64 y decodificarla a una cadena
     img_str = base64.b64encode(img.read()).decode('utf-8')
     return img_str
@@ -223,21 +238,33 @@ def mostrar_grafica(respuestas: Dict[str, int]) -> str:
 def index():
     return render_template('index.html', preguntas=preguntas)
 
-# Ruta para procesar el formulario y mostrar los resultados
 @app.route('/resultados', methods=['POST'])
 def resultados():
-    try:
-        id_dispositivo = str(uuid.uuid4())  # Generar un ID único para el dispositivo
-        respuestas = obtener_respuestas(request.form, preguntas)
-        disciplina = determinar_disciplina(respuestas)
-        grafica = mostrar_grafica(respuestas)
-        # Almacenar el resultado en la base de datos
-        resultado = Resultado(id_dispositivo=id_dispositivo, disciplina=disciplina)
-        db.session.add(resultado)
-        db.session.commit()
-        return render_template('resultados.html', disciplina=disciplina, grafica=grafica)
-    except Exception as e:
-        return str(e)
+    id_dispositivo = str(uuid.uuid4())  # Generar un ID único para el dispositivo
+    respuestas = obtener_respuestas(request.form, preguntas)
+    disciplina = determinar_disciplina(respuestas)
+    grafica = mostrar_grafica(respuestas)
+    
+    # Calcular el puntaje máximo
+    puntaje_maximo = max(respuestas.values()) if respuestas else 0
+
+    # Intenta guardar el resultado en la base de datos
+    for intento in range(5):  # Intenta 5 veces
+        try:
+            # Almacenar el resultado en la base de datos
+            resultado = Resultado(id_dispositivo=id_dispositivo, disciplina=disciplina)
+            db.session.add(resultado)
+            db.session.commit()
+            break  # Si se guarda con éxito, sale del bucle
+        except DatabaseError:
+            if intento < 4:  # Si no es el último intento, espera un poco y vuelve a intentarlo
+                time.sleep(5)  # Espera 5 segundos
+                continue
+            else:  # Si es el último intento, lanza la excepción
+                raise
+        finally:
+            # Devuelve la respuesta, independientemente de si se produjo una excepción o no
+            return render_template('resultados.html', disciplina=disciplina, grafica=grafica, puntaje=puntaje_maximo)
     
 @app.route('/estadisticas')
 def estadisticas():
