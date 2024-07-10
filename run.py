@@ -1,7 +1,4 @@
-from app import create_app, db
-from app.models import Usuario, Resultado
-from flask.cli import with_appcontext
-from sqlalchemy import text
+from app import create_app
 import click
 
 app = create_app()
@@ -19,7 +16,12 @@ def list_routes():
         print(line)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Utilizar el servidor de producción en lugar del servidor de desarrollo para mejor rendimiento
+    from werkzeug.serving import run_simple
+    run_simple('localhost', 5000, app, use_reloader=True, use_debugger=True)
+
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 
 # @app.cli.command("init-db")

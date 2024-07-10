@@ -33,6 +33,6 @@ def create_app():
         
         # Verificación y creación de tablas en la base de datos
         # Si las tablas no existen, se crean según los modelos definidos
-        db.create_all()
+        # db.create_all()
 
     return app
