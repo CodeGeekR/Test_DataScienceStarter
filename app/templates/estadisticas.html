@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block content %}
+<div class="container d-flex flex-column align-items-center justify-content-center text-center">
+  <h1>Estadisticas del Test de Afinidad para Ciencia de Datos</h1>
+  <p>Número total de personas que completaron el test: {{ total_personas }}</p>
+  <div id="grafica">
+    <!-- Aquí se mostrará la imagen de la gráfica -->
+    <img src="data:image/png;base64,{{ img_str }}" alt="Gráfica circular" class="img-fluid" />
+  </div>
+  <!-- Botón para volver a realizar el test -->
+  <div class="d-flex justify-content-center mt-3">
+    <a href="/menu" class="startTest btn btn-primary">Realizar el test nuevamente</a>
+  </div>
+</div>
+{% endblock %} {% block extra_scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Función para mostrar la siguiente pregunta
+    function nextQuestion(index) {
+      document.getElementById("pregunta" + index).classList.remove("active");
+      var nextQuestion = document.getElementById("pregunta" + (index + 1));
+      if (nextQuestion) {
+        nextQuestion.classList.add("active");
+      } else {
+        document.getElementById("submit-button").style.display = "block";
+      }
+    }
+
+    // Función para iniciar el test
+    function startTest() {
+      document.getElementById("intro").classList.remove("active");
+      document.getElementById("pregunta1").classList.add("active");
+
+      // Mostrar preguntas en la consola
+      var preguntas = {{ preguntas | tojson }};
+      console.log("Preguntas cargadas:", preguntas);
+    }
+
+    // Asignar el evento al botón de inicio
+    document.getElementById('startTestButton').addEventListener('click', startTest);
+
+    // Mostrar la introducción al cargar la página
+    document.getElementById("intro").classList.add("active");
+    // Ocultar todas las preguntas al inicio
+    var questions = document.getElementsByClassName("question");
+    for (var i = 0; i < questions.length; i++) {
+      questions[i].style.display = "none";
+    }
+  });
+</script>
+{% endblock %}

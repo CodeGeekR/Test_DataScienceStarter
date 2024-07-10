@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1>Bienvenido a la Plataforma de Psicometría</h1>
+      <p>Explora nuestros tests de inteligencia emocional, ciencia de datos y muchos más. Regístrate para acceder a los formularios y obtener resultados usando análisis de datos e inteligencia artificial.</p>
+      <a href="{{ url_for('main.register') }}" class="btn btn-primary mb-4">Regístrate Ahora</a>
+    </div>
+  </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="icon-container">
+              <i class="bi bi-emoji-smile-fill" style="font-size: 7rem; color: var(--primary-color);"></i>
+            </div>
+            <h5 class="card-title">Test de Inteligencia Emocional</h5>
+            <p class="card-text">Descubre tu nivel de inteligencia emocional y cómo puedes mejorarla.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="icon-container">
+              <i class="bi bi-bar-chart" style="font-size: 7rem; color: var(--primary-color);"></i>
+            </div>
+            <h5 class="card-title">Test de Ciencia de Datos</h5>
+            <p class="card-text">Evalúa tus habilidades en ciencia de datos y obtén recomendaciones personalizadas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-body text-center">
+            <div class="icon-container">
+              <i class="bi bi-slack" style="font-size: 7rem; color: var(--primary-color);"></i>
+            </div>
+            <h5 class="card-title">Y Muchos Más</h5>
+            <p class="card-text">Explora una variedad de tests diseñados para ayudarte a crecer personal y profesionalmente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</div>
+{% endblock %}

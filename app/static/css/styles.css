@@ -1,0 +1,244 @@
+:root {
+  --primary-color: #114B60;
+  --secondary-color: #88D498;
+  --tertiary-color: #C6DAC0;
+  --quaternary-color: #1A946F;
+  --quinary-color: #F2E9D2;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--quinary-color);
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 5%;
+}
+
+p {
+  text-wrap: wrap;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--tertiary-color);
+}
+
+.card-title {
+  color: var(--primary-color);
+}
+
+.card-text {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--quaternary-color);
+}
+
+.icon-container {
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) { 
+    #carouselExampleIndicators {
+      margin-top: 20px; /* Ajusta el margen superior para dispositivos móviles */
+    }
+  }
+
+#grafica {
+    margin-top: 50px;
+}
+.form-group, .intro {
+    display: none;
+}
+
+.form-group .form-label {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.form-group.active, .intro.active {
+    display: block;
+}
+.intro {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.form-select {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--quaternary-color); 
+}
+
+.startTest {
+    background-color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    color: var(--secondary-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.startTest:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.swal-wide{
+    width: 50% !important;
+    left: 25% !important; /* Centra el alert respecto al ancho de la pantalla */
+    position: fixed !important;
+    top: 50% !important; /* Centra el alert verticalmente */
+    transform: translateY(-50%) !important; /* Ajuste fino para centrado vertical */
+}
+
+@media (min-width: 375px) { /* Pantallas de PC o Laptop */
+    .custom-form-width {
+    width: 360px;
+    margin: auto;
+    }
+}
+
+/* Asegurar que las alertas se muestren en la parte superior de los formularios */
+.alert-container {
+    position: fixed; /* Fijar la posición del contenedor */
+    top: 70px; /* Ajustar la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    z-index: 1000; /* Asegurar que las alertas estén encima de otros elementos */
+    width: 40%; /* Ajustar el ancho de las alertas */
+    text-align: center;
+}
+
+/* ajustar ancho para pantallas con ancho inferior a 767px para que se vea bien en dispositivos móviles */
+@media (max-width: 767px) {
+    .alert-container {
+        width: 90%;
+    }
+}
+
+/* Styos para el HTML Menu */
+
+/* Estilos para los cards */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los íconos dentro de los cards */
+.card .bi {
+font-size: 1.5rem;
+color: #007bff;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+max-width: 1200px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+.d-flex {
+    flex-direction: column;
+}
+.d-flex .btn {
+    margin-top: 10px;
+}
+}
+
+.edit-profile {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 20%;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .edit-profile {
+        width: 60%;
+    }
+}
+
+.menu-host {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 55%;
+    text-align: center;
+}
+
+#boton-enviar {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Asegura que el select no sea más ancho que el párrafo de la pregunta */
+.pregunta {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Selecciona el párrafo con la clase .pregunta-texto dentro de un div con la clase .pregunta */
+.pregunta .pregunta-texto {
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word; /* Asegura que las palabras largas se dividan correctamente */
+  width: 100%;
+}
+
+/* Estilos específicos para pantallas grandes */
+@media (min-width: 768px) {
+  .pregunta .pregunta-texto {
+    display: block; 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    /* Ajustar el ancho del contenedor para que el texto no se extienda demasiado */
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.form-select {
+  max-width: 100%;
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}

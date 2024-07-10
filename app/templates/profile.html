@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 custom-form-width">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Perfil de {{ current_user.username }}</h2>
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+              {{ form.first_name.label(class="form-label") }} {{ form.first_name(class="form-control") }}
+            </div>
+            <div class="mb-3">
+              {{ form.last_name.label(class="form-label") }} {{ form.last_name(class="form-control") }}
+            </div>
+            <div class="d-grid">{{ form.submit(class="btn startTest") }}</div>
+          </form>
+          <!-- Formulario para darse de baja -->
+          <form method="POST" action="{{ url_for('main.delete_account') }}" class="mt-3">
+            <button type="submit" class="btn btn-danger w-100">Darse de baja</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

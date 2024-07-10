@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="menu-host">{{ title }}</h1>
+<form id="formulario" method="POST" action="{{ url_for('main.resultados') }}">
+  {% for pregunta in preguntas %}
+  <div
+    class="pregunta"
+    id="pregunta_{{ loop.index0 }}"
+    style="display: {% if loop.first %}block{% else %}none{% endif %};"
+  >
+    <p class="pregunta-texto">{{ pregunta.texto }}</p>
+    <div class="mb-3">
+      <select class="form-select" name="pregunta{{ loop.index }}" required data-pregunta-id="{{ loop.index0 }}">
+        <option value="" disabled selected>Seleccione una opción</option>
+        {% for key, opcion in pregunta.opciones.items() %}
+        <option value="{{ key }}" data-puntajes="{{ opcion.puntajes | tojson | forceescape }}">
+          {{ opcion.texto }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  {% endfor %}
+  <input type="hidden" name="puntaje_estadistica" id="puntaje_estadistica" value="0" />
+  <input type="hidden" name="puntaje_aprendizaje_automatico" id="puntaje_aprendizaje_automatico" value="0" />
+  <input type="hidden" name="puntaje_analisis_de_datos" id="puntaje_analisis_de_datos" value="0" />
+  <button type="submit" id="boton-enviar" class="btn btn-primary text-center" style="display: none">Enviar</button>
+</form>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Selecciona todos los elementos con la clase 'pregunta'
+    const preguntas = document.querySelectorAll(".pregunta");
+
+    // Inicializa los puntajes para cada disciplina
+    const puntajes = {
+      estadistica: 0,
+      aprendizaje_automatico: 0,
+      analisis_de_datos: 0,
+    };
+
+    // Itera sobre cada pregunta
+    preguntas.forEach((pregunta, index) => {
+      // Añade un evento 'change' al elemento 'select' dentro de cada pregunta
+      pregunta.querySelector("select").addEventListener("change", function () {
+        // Obtiene los puntajes de la opción seleccionada y los convierte a un objeto
+        const puntajesOpcion = JSON.parse(this.options[this.selectedIndex].dataset.puntajes);
+
+        // Actualiza los puntajes para cada disciplina
+        Object.entries(puntajesOpcion).forEach(([disciplina, puntos]) => {
+          puntajes[disciplina] += puntos;
+          // Actualiza el valor del input correspondiente al puntaje de la disciplina
+          document.getElementById(`puntaje_${disciplina}`).value = puntajes[disciplina];
+        });
+
+        // Muestra la siguiente pregunta y oculta la actual
+        if (index < preguntas.length - 1) {
+          preguntas[index].style.display = "none";
+          preguntas[index + 1].style.display = "block";
+        } else {
+          // Si es la última pregunta, muestra el botón de enviar
+          document.getElementById("boton-enviar").style.display = "block";
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

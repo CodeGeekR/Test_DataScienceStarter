@@ -25,7 +25,7 @@ pip install -r requirements.txt
 Para usar este script, simplemente ejecuta el siguiente comando en tu terminal:
 
 ```bash
-python test.py
+python run.py
 ```
 
 ## URL del Proyecto
