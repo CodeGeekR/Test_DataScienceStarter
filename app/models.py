@@ -37,3 +37,6 @@ class Resultado(db.Model):
     puntaje_aprendizaje_automatico = db.Column(db.Integer, nullable=False)
     puntaje_analisis_de_datos = db.Column(db.Integer, nullable=False)
     fecha_creacion = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    def __repr__(self):
+        return f'<Resultado {self.id} - {self.disciplina}>'
