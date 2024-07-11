@@ -18,13 +18,13 @@
         }
     },
     {
-    "texto": "Imagina que tienes acceso a datos sobre tus hábitos diarios. ¿Qué te gustaría hacer con esa información?",
-    "opciones": {
-        "a": {"texto": "Analizarlos para entender mejor mis patrones de comportamiento", "puntajes": {"estadistica": 4, "aprendizaje_automatico": 2, "analisis_de_datos": 2}},
-        "b": {"texto": "Usarlos para predecir tendencias futuras en mis actividades", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 4, "analisis_de_datos": 2}},
-        "c": {"texto": "Visualizarlos para ver gráficamente cómo varían mis hábitos con el tiempo", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 2, "analisis_de_datos": 4}},
-        "d": {"texto": "Utilizarlos para contar historias sobre mi vida y mis decisiones diarias", "puntajes": {"estadistica": 1, "aprendizaje_automatico": 1, "analisis_de_datos": 4}}
-        }
+        "texto": "Imagina que tienes acceso a datos sobre tus hábitos diarios. ¿Qué te gustaría hacer con esa información?",
+        "opciones": {
+            "a": {"texto": "Analizarlos para entender mejor mis patrones de comportamiento", "puntajes": {"estadistica": 4, "aprendizaje_automatico": 2, "analisis_de_datos": 2}},
+            "b": {"texto": "Usarlos para predecir tendencias futuras en mis actividades", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 4, "analisis_de_datos": 2}},
+            "c": {"texto": "Visualizarlos para ver gráficamente cómo varían mis hábitos con el tiempo", "puntajes": {"estadistica": 2, "aprendizaje_automatico": 2, "analisis_de_datos": 4}},
+            "d": {"texto": "Utilizarlos para contar historias sobre mi vida y mis decisiones diarias", "puntajes": {"estadistica": 1, "aprendizaje_automatico": 1, "analisis_de_datos": 4}}
+            }
     },
     {
         "texto": "Quieres aprender a cocinar un nuevo plato. ¿Cómo te gustaría empezar?",

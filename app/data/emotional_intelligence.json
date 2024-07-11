@@ -1,0 +1,174 @@
+[
+    {
+        "texto": "Un amigo tuyo ha tenido un mal día y te cuenta lo que le ha pasado. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Le escucho con atención y le ofrezco mi apoyo", "puntajes": {"autoconciencia": 3, "autorregulación": 2, "empatía": 4, "habilidades_sociales": 3}},
+            "b": {"texto": "Le doy algunos consejos prácticos para que se sienta mejor", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Le animo a que hable con un adulto o profesor", "puntajes": {"autoconciencia": 2, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 3}},
+            "d": {"texto": "Le invito a hacer algo divertido para que se distraiga", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}}
+        }
+    },
+    {
+        "texto": "Tienes un examen importante mañana y te sientes muy ansioso. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Hago una pausa para respirar profundamente y calmarme", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "b": {"texto": "Llamo a un amigo para hablar y desahogarme", "puntajes": {"autoconciencia": 2, "autorregulación": 2, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Reviso mis apuntes una vez más para sentirme más preparado", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Salgo a dar un paseo para despejar mi mente", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "En clase, un compañero hace un comentario que no te gusta. ¿Cómo reaccionas?",
+        "opciones": {
+            "a": {"texto": "Le pido que hablemos en privado para aclarar el comentario", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}},
+            "b": {"texto": "Ignoro el comentario y continúo con la clase", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "c": {"texto": "Le respondo de inmediato para defenderme", "puntajes": {"autoconciencia": 2, "autorregulación": 2, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Le comento a un amigo lo que pasó y le pido su opinión", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}}
+        }
+    },
+    {
+        "texto": "Durante un trabajo en grupo, uno de tus compañeros no está contribuyendo. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Hablo con él en privado para entender por qué no está participando", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 4, "habilidades_sociales": 3}},
+            "b": {"texto": "Informo al profesor para que tome cartas en el asunto", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "c": {"texto": "Asumo su parte del trabajo para que el grupo no se retrase", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}},
+            "d": {"texto": "Le animo frente al grupo para que participe más", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}}
+        }
+    },
+    {
+        "texto": "Tu equipo de fútbol ha perdido un partido importante y te sientes decepcionado. ¿Cómo manejas la situación?",
+        "opciones": {
+            "a": {"texto": "Converso con el equipo sobre lo que podemos mejorar", "puntajes": {"autoconciencia": 4, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "b": {"texto": "Me tomo un tiempo para reflexionar en privado sobre la derrota", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "c": {"texto": "Me enfoco en animar a mis compañeros a seguir adelante", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "d": {"texto": "Trato de olvidarlo rápidamente haciendo otra actividad", "puntajes": {"autoconciencia": 2, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Tu compañero de clase está teniendo problemas en casa y parece triste. ¿Qué harías?",
+        "opciones": {
+            "a": {"texto": "No le prestarías atención, cada quien tiene sus problemas", "puntaje": {"autoconciencia": 1, "autoregulacion": 1, "empatia": 1, "habilidades_sociales": 1}},
+            "b": {"texto": "Te acercarías y le preguntarías cómo se siente, ofreciéndole tu apoyo", "puntaje": {"autoconciencia": 3, "autoregulacion": 3, "empatia": 3, "habilidades_sociales": 3}},
+            "c": {"texto": "Intentarías animarlo con una broma o distraerlo con alguna actividad", "puntaje": {"autoconciencia": 2, "autoregulacion": 2, "empatia": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Le dirías a un adulto de confianza sobre la situación para que puedan ayudarlo", "puntaje": {"autoconciencia": 3, "autoregulacion": 3, "empatia": 3, "habilidades_sociales": 3}}
+        }
+    },
+    {
+        "texto": "Tu amigo te cuenta que ha tenido una discusión con otro compañero. ¿Cómo reaccionas?",
+        "opciones": {
+            "a": {"texto": "Le escuchas y le ofreces tu apoyo emocional", "puntaje": {"autoconciencia": 3, "autoregulacion": 3, "empatia": 3, "habilidades_sociales": 3}},
+            "b": {"texto": "Le das consejos sobre cómo resolver la situación", "puntaje": {"autoconciencia": 2, "autoregulacion": 2, "empatia": 2, "habilidades_sociales": 2}},
+            "c": {"texto": "Intentas mediar entre los dos para que puedan solucionar el problema", "puntaje": {"autoconciencia": 3, "autoregulacion": 3, "empatia": 3, "habilidades_sociales": 3}},
+            "d": {"texto": "Le animas a hablar con el profesor o un adulto para que les ayude", "puntaje": {"autoconciencia": 2, "autoregulacion": 2, "empatia": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Tu profesor te pide que trabajes en equipo con alguien que no te cae bien. ¿Cómo manejas la situación?",
+        "opciones": {
+            "a": {"texto": "Intentas ser profesional y te enfocas en completar la tarea", "puntaje": {"autoconciencia": 3, "autoregulacion": 3, "empatia": 1, "habilidades_sociales": 2}},
+            "b": {"texto": "Tratas de evitar el contacto con esa persona durante el trabajo", "puntaje": {"autoconciencia": 1, "autoregulacion": 1, "empatia": 1, "habilidades_sociales": 1}},
+            "c": {"texto": "Hablas con el profesor para explicarle tus diferencias y buscar una solución", "puntaje": {"autoconciencia": 3, "autoregulacion": 2, "empatia": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Te esfuerzas por entender el punto de vista del otro y trabajar juntos de manera efectiva", "puntaje": {"autoconciencia": 2, "autoregulacion": 2, "empatia": 3, "habilidades_sociales": 3}}
+        }
+    },    
+    {
+        "texto": "Te das cuenta de que te sientes muy estresado por la cantidad de tareas escolares. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Hago una lista de tareas y organizo mi tiempo para completarlas", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "b": {"texto": "Hablo con un profesor o consejero para pedir orientación", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}},
+            "c": {"texto": "Me tomo un descanso para relajarme antes de continuar", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Pido ayuda a mis amigos o familia para organizarme mejor", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}}
+        }
+    },
+    {
+        "texto": "En un debate en clase, alguien no está de acuerdo contigo. ¿Cómo reaccionas?",
+        "opciones": {
+            "a": {"texto": "Escucho su punto de vista y luego presento mis argumentos respetuosamente", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 4}},
+            "b": {"texto": "Intento comprender su punto de vista y encontrar un punto medio", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "c": {"texto": "Defiendo mi punto de vista con firmeza sin descalificar al otro", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}},
+            "d": {"texto": "Evito la confrontación y dejo que otros hablen", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Un compañero de clase te hace una crítica constructiva. ¿Cómo reaccionas?",
+        "opciones": {
+            "a": {"texto": "Agradezco la crítica y la uso para mejorar", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}},
+            "b": {"texto": "Le pregunto más detalles para entender mejor su punto de vista", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "c": {"texto": "Escucho la crítica pero no la tomo en cuenta de inmediato", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Me siento un poco herido pero trato de no mostrarlo", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Tu profesor te felicita por un trabajo bien hecho. ¿Cómo te sientes y reaccionas?",
+        "opciones": {
+            "a": {"texto": "Me siento muy orgulloso y agradezco al profesor", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}},
+            "b": {"texto": "Agradezco al profesor y me motivo a seguir mejorando", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Siento satisfacción interna pero no hago mucho alboroto", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Comparto la buena noticia con mis amigos y familia", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}}
+        }
+    },
+    {
+        "texto": "Tienes una discusión con un amigo. ¿Cómo intentas resolverlo?",
+        "opciones": {
+            "a": {"texto": "Le pido disculpas si he cometido un error y trato de solucionar el problema", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 4, "habilidades_sociales": 4}},
+            "b": {"texto": "Le escucho y trato de entender su punto de vista", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "c": {"texto": "Le doy tiempo para que ambos nos calmemos y luego hablamos", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}},
+            "d": {"texto": "Evito hablar con él por un tiempo hasta que las cosas se enfríen", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Tu profesor te pide que lideres un proyecto en clase. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Acepto el desafío y organizo un plan de trabajo", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 4}},
+            "b": {"texto": "Delego tareas a mis compañeros y los motivo a participar", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "c": {"texto": "Acepto el liderazgo pero busco ayuda de mis compañeros", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}},
+            "d": {"texto": "Me siento nervioso pero hago mi mejor esfuerzo", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Un compañero te pide consejo sobre un problema personal. ¿Cómo respondes?",
+        "opciones": {
+            "a": {"texto": "Le escucho atentamente y le ofrezco mi apoyo", "puntajes": {"autoconciencia": 4, "autorregulación": 3, "empatía": 4, "habilidades_sociales": 4}},
+            "b": {"texto": "Le doy algunos consejos prácticos para su problema", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Le sugiero hablar con un adulto o consejero", "puntajes": {"autoconciencia": 2, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Le invito a hacer algo divertido para distraerse", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}}
+        }
+    },
+    {
+        "texto": "Durante una actividad en grupo, uno de tus compañeros no está de acuerdo con la estrategia. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Escucho su opinión y trato de llegar a un consenso", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 4, "habilidades_sociales": 4}},
+            "b": {"texto": "Presento mis argumentos pero estoy abierto a cambios", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 3}},
+            "c": {"texto": "Intento persuadirle para que vea las cosas a mi manera", "puntajes": {"autoconciencia": 3, "autorregulación": 2, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Dejo que el grupo decida qué hacer", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Te das cuenta de que te has equivocado en una tarea importante. ¿Cómo reaccionas?",
+        "opciones": {
+            "a": {"texto": "Admito mi error y busco cómo solucionarlo", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}},
+            "b": {"texto": "Pido ayuda a un profesor o compañero para corregirlo", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Trato de arreglarlo por mi cuenta antes de que alguien se dé cuenta", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Me siento mal pero trato de aprender de mi error", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 3, "habilidades_sociales": 3}}
+        }
+    },
+    {
+        "texto": "Un amigo te pide ayuda con una tarea, pero estás ocupado. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Le explico mi situación y le ofrezco ayudarle más tarde", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 4, "habilidades_sociales": 3}},
+            "b": {"texto": "Le ayudo rápidamente aunque tenga poco tiempo", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Le sugiero que pida ayuda a otra persona", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Le digo que no puedo ayudarle en este momento", "puntajes": {"autoconciencia": 2, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}}
+        }
+    },
+    {
+        "texto": "Un profesor te pide que presentes un trabajo en público, pero te pone nervioso hablar frente a los demás. ¿Qué haces?",
+        "opciones": {
+            "a": {"texto": "Practico mi presentación hasta sentirme más seguro", "puntajes": {"autoconciencia": 4, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 2}},
+            "b": {"texto": "Pido a un amigo que me acompañe durante la presentación", "puntajes": {"autoconciencia": 3, "autorregulación": 3, "empatía": 3, "habilidades_sociales": 4}},
+            "c": {"texto": "Hablo con el profesor para ver si hay otra opción", "puntajes": {"autoconciencia": 2, "autorregulación": 3, "empatía": 2, "habilidades_sociales": 2}},
+            "d": {"texto": "Acepto el desafío e intento superarlo", "puntajes": {"autoconciencia": 3, "autorregulación": 4, "empatía": 2, "habilidades_sociales": 3}}
+        }
+    }
+]
+

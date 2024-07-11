@@ -186,7 +186,7 @@ def inteligencia_emocional_form():
     Requiere que el usuario esté autenticado.
     """
     # Renderiza la plantilla 'inteligencia_emocional.html' con el título especificado
-    return render_template('inteligencia_emocional.html', title='Formulario de Inteligencia Emocional')
+    return render_template('test-inteligencia-emocional.html', title='Test de Inteligencia Emocional')
 
 
 @bp.route('/ciencia-datos')
